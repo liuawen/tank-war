@@ -1,6 +1,8 @@
 package cn.liuawen.tank;
 
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -16,7 +18,9 @@ public class TankFrame  extends Frame {
         this.setResizable(false);
         this.setTitle("tank war");
         this.setVisible(true);
-
+        //内部类 我写一个其他也调用不到 直接内部类吧
+        this.addKeyListener(new MyKeyListener());
+        //匿名内部类
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -34,5 +38,20 @@ public class TankFrame  extends Frame {
         g.fillRect(x, y, 20, 20);
         x += 10;
         y += 10;
+    }
+
+    //处理键盘事件的类
+    class MyKeyListener extends KeyAdapter{
+        @Override
+        public void keyPressed(KeyEvent e) {
+            //按下去
+            System.out.println("key pressed");
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            //抬起来
+            System.out.println("key released");
+        }
     }
 }
