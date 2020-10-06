@@ -10,7 +10,7 @@ import java.awt.event.WindowEvent;
  */
 public class T {
     public static void main(String[] args) {
-        Frame f = new Frame();
+       /* Frame f = new Frame();
         f.setSize(800, 600);
         f.setResizable(false);
         f.setTitle("tank war");
@@ -21,6 +21,8 @@ public class T {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
-        });
+        });*/
+        TankFrame tf = new TankFrame();
+
     }
 }
