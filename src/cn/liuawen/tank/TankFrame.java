@@ -11,10 +11,8 @@ import java.awt.event.WindowEvent;
  * @create 2020-10-06
  */
 public class TankFrame  extends Frame {
-    int x = 200;
-    int y = 200;
-    Dir dir = Dir.DOWN;
-    private static final int SPEED = 10;
+    Tank myTank = new Tank(200, 200, Dir.DOWN);
+
     public TankFrame(){
         this.setSize(800, 600);
         this.setResizable(false);
@@ -35,20 +33,9 @@ public class TankFrame  extends Frame {
     //graphics g  画笔
     @Override
     public void paint(Graphics g){
-        g.fillRect(x, y, 20, 20);
-        switch (dir){
-            case LEFT:
-                x -= SPEED;
-                break;
-            case UP:
-                y -= SPEED;
-                break;
-            case RIGHT:
-                x += SPEED;
-                break;
-            case DOWN:
-                y += SPEED;
-        }
+        //谁最知道坦克怎么画呢  坦克自己呀
+        myTank.paint(g);
+
 //        System.out.println("paint");
 //        g.fillRect(200,200,50,50);
 //        g.fillRect(x, y, 20, 20);
@@ -130,10 +117,14 @@ public class TankFrame  extends Frame {
             setMainTankDir();
         }
         private void setMainTankDir() {
-            if (bL) dir = Dir.LEFT;
+/*            if (bL) dir = Dir.LEFT;
             if (bU) dir = Dir.UP;
             if (bR) dir = Dir.RIGHT;
-            if (bD) dir = Dir.DOWN;
+            if (bD) dir = Dir.DOWN;*/
+            if (bL) myTank.setDir(Dir.LEFT);
+            if (bU) myTank.setDir(Dir.UP);
+            if (bR) myTank.setDir(Dir.RIGHT);
+            if (bD) myTank.setDir(Dir.DOWN);
 
         }
 
