@@ -9,7 +9,7 @@ import java.awt.event.WindowEvent;
  * @create 2020-10-05
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
        /* Frame f = new Frame();
         f.setSize(800, 600);
         f.setResizable(false);
@@ -24,5 +24,9 @@ public class Main {
         });*/
         TankFrame tf = new TankFrame();
 
+        while (true){
+            Thread.sleep(50);
+            tf.repaint();
+        }
     }
 }

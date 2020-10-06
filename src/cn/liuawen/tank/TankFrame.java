@@ -37,7 +37,7 @@ public class TankFrame  extends Frame {
 //        g.fillRect(200,200,50,50);
         g.fillRect(x, y, 20, 20);
         x += 10;
-        y += 10;
+//        y += 10;
     }
 
     //处理键盘事件的类
@@ -45,7 +45,9 @@ public class TankFrame  extends Frame {
         @Override
         public void keyPressed(KeyEvent e) {
             //按下去
-            System.out.println("key pressed");
+//            System.out.println("key pressed");
+            x += 100;
+//            repaint();
         }
 
         @Override
