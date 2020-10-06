@@ -121,10 +121,19 @@ public class TankFrame  extends Frame {
             if (bU) dir = Dir.UP;
             if (bR) dir = Dir.RIGHT;
             if (bD) dir = Dir.DOWN;*/
-            if (bL) myTank.setDir(Dir.LEFT);
-            if (bU) myTank.setDir(Dir.UP);
-            if (bR) myTank.setDir(Dir.RIGHT);
-            if (bD) myTank.setDir(Dir.DOWN);
+
+            //左上右下 没有一个按了的  就静止了
+
+            if (!bL && !bU && !bR && !bD) myTank.setMoving(false);
+            else {
+                myTank.setMoving(true);
+                if (bL) myTank.setDir(Dir.LEFT);
+                if (bU) myTank.setDir(Dir.UP);
+                if (bR) myTank.setDir(Dir.RIGHT);
+                if (bD) myTank.setDir(Dir.DOWN);
+
+            }
+
 
         }
 
