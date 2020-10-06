@@ -8,7 +8,7 @@ import java.awt.event.WindowEvent;
  * @author Liu Awen Email:willowawen@gmail.com
  * @create 2020-10-05
  */
-public class T {
+public class Main {
     public static void main(String[] args) {
        /* Frame f = new Frame();
         f.setSize(800, 600);

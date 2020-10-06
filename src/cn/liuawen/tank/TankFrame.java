@@ -9,6 +9,8 @@ import java.awt.event.WindowEvent;
  * @create 2020-10-06
  */
 public class TankFrame  extends Frame {
+    int x = 200;
+    int y = 200;
     public TankFrame(){
         this.setSize(800, 600);
         this.setResizable(false);
@@ -28,6 +30,9 @@ public class TankFrame  extends Frame {
     @Override
     public void paint(Graphics g){
         System.out.println("paint");
-        g.fillRect(200,200,50,50);
+//        g.fillRect(200,200,50,50);
+        g.fillRect(x, y, 20, 20);
+        x += 10;
+        y += 10;
     }
 }
